@@ -1,0 +1,60 @@
+<!-- 
+📌 VA Web Components Version Highlighter (Bookmarklet)
+What it does:
+Highlights all <va-*> components on any page and labels them as:
+
+🟧 v3 if no uswds="false" attribute
+
+🟥 v1 if the attribute uswds="false" is present
+
+Usage:
+
+Open the raw HTML link:
+https://gist.githubusercontent.com/<your‑user>/<gist‑id>/raw/va-web-components-bookmarklet.html
+
+Drag the 🔍 Show/Hide VA Web Components button to your browser’s bookmarks bar.
+
+In your local vets-website environment, click it to toggle highlighting.
+
+Click again to remove highlights—or refresh the page to clear. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VA Web Components Version Highlighter</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    a.bookmarklet {
+      display: inline-block;
+      font-size: 16px;
+      padding: 10px 15px;
+      background-color: #005ea2;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: grab;
+    }
+    a.bookmarklet:active { cursor: grabbing; }
+  </style>
+</head>
+<body>
+  <h1>📌 VA Web Components Bookmarklet</h1>
+  <p>Drag the a-ref below to your bookmarks bar:</p>
+  <a class="bookmarklet"
+     href="javascript:(function()%7B!(function()%7Blet%20e%3Ddocument.getElementById('bookmarklet-component-highlight')%3Bif(e)%7Be.outerHTML%3D''%3B%7De%3Ddocument.createElement('style')%3Be.id%3D'bookmarklet-component-highlight'%3Be.innerText%3D''%3B['va-accordion','va-additional-info','va-alert','va-alert-expandable','va-back-to-top','va-banner','va-official-gov-banner','va-promo-banner','va-breadcrumbs','va-button','va-button-pair','va-card','va-checkbox','va-checkbox-group','va-crisis-line-modal','va-date','va-featured-content','va-file-input','va-link','va-loading-indicator','va-memorable-date','va-minimal-header','va-modal','va-need-help','va-notification','va-number-input','va-omb-info','va-on-this-page','va-pagination','va-privacy-agreement','va-process-list','va-progress-bar','va-segmented-progress-bar','va-radio','va-search-input','va-select','va-sidenav','va-summary-box','va-table','va-telephone','va-text-input','va-textarea','va-statement-of-truth'].forEach(a%3D%3E%7Bconst%20v3%3D%60%24%7Ba%7D%3Anot(%5Buswds%3D%22false%22%5D)%20%7Boutline%3Adotted%205px%20orange%3B%7D%60%3Bconst%20v3Label%3D%60%24%7Ba%7D%3Anot(%5Buswds%3D%22false%22%5D)%3Aafter%20%7Bcontent%3A'%24%7Ba%7D%20v3'%3Bcolor%3A%23fff%3Bbackground-color%3Aorange%3Bpadding%3A3px%3B%7D%60%3Bconst%20v1%3D%60%24%7Ba%7D%5Buswds%3D%22false%22%5D%20%7Boutline%3Adotted%205px%20darkred%3B%7D%60%3Bconst%20v1Label%3D%60%24%7Ba%7D%5Buswds%3D%22false%22%5D%3Aafter%20%7Bcontent%3A'%24%7Ba%7D%20v1'%3Bcolor%3A%23fff%3Bbackground-color%3Adarkred%3Bpadding%3A3px%3B%7D%60%3Be.innerText%2B%3D%60%24%7Bv3%7D%20%24%7Bv3Label%7D%20%24%7Bv1%7D%20%24%7Bv1Label%7D%60%3B%7D)%3Bdocument.head.appendChild(e)%3B%7D)()%7D)()">
+    🔍 Show/Hide VA Web Components
+  </a>
+
+  <h2>How to Use</h2>
+  <ol>
+    <li>Open this Gist in your browser via raw GitHub URL (like <code>gist.github.com/…/raw/va-web-components-bookmarklet.html</code>).</li>
+    <li>Drag the blue button to your bookmarks bar.</li>
+    <li>Go to any page on your local vets-website (e.g. <code>http://localhost:3001</code>).</li>
+    <li>Click the bookmark – borders &amp; labels will appear around all <code>va‑*</code> components.</li>
+    <li>Click again to toggle it off — or refreshing the page removes it entirely.</li>
+  </ol>
+
+  <p><em>Tip for team members:</em> Bookmarklets work in most browsers—no permissions needed.</p>
+</body>
+</html>
